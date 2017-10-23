@@ -5,6 +5,7 @@ import Controller.Game;
  */
 public class Main {
     public static void main(String arg[]){
+        int ploy = 1;
         Game.start();
         Game.showScore();
         Game.showBoard();
@@ -12,7 +13,7 @@ public class Main {
 
 //        swap ไม่ dup เอากลับที่เดิม
 //        swap dup remove ตำแหน่่งที่ dup
-          Game.swapRight(4,1);
+          Game.swapRight(4,2);
 //          Game.swapLeft(4,1);
           System.out.println();
           Game.showScore();

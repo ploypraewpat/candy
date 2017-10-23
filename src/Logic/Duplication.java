@@ -11,17 +11,16 @@ public class Duplication {
     private boolean checkDupLeft(int[][] tiles, int row, int column) {
         setCountEmpty();
         for (int k = column-1; k >= 0; k--) {
-            if(tiles[row][column] == tiles[row][k]){
-                countRow++;
-            }
-            try{
-                if(countRow >=2 && tiles[row][column] != tiles[row][k-1]){
+                if(tiles[row][column] == tiles[row][k]){
+                    countRow++;
+                }
+                try{
+                    if(countRow >=2 && tiles[row][column] != tiles[row][k-1]){
+                        return true;
+                    }
+                }catch (Exception e){
                     return true;
                 }
-            }catch (Exception e){
-                return true;
-            }
-
         }
         return false;
     }
@@ -29,17 +28,16 @@ public class Duplication {
     private boolean checkDupUp(int[][] tiles, int row, int column) {
         setCountEmpty();
         for (int k = row-1; k >= 0; k--) {
-            if(tiles[row][column] == tiles[k][column]){
-                countColumn++;
-            }
-            try{
-                if(countColumn >=2 && tiles[row][column] != tiles[k-1][column]){
+                if(tiles[row][column] == tiles[k][column]){
+                    countColumn++;
+                }
+                try{
+                    if(countColumn >=2 && tiles[row][column] != tiles[k-1][column]){
+                        return true;
+                    }
+                }catch (Exception e){
                     return true;
                 }
-            }catch (Exception e){
-                return true;
-            }
-
         }
         return false;
     }
@@ -47,17 +45,16 @@ public class Duplication {
     private boolean checkDupRight(int[][] tiles, int row,int column){
         setCountEmpty();
         for (int k = column+1; k <= 5; k++) {
-            if(tiles[row][column] == tiles[row][k]){
-                countRow++;
-            }
-            try{
-                if(countRow >=2 && tiles[row][column] != tiles[row][k-1]){
+                if(tiles[row][column] == tiles[row][k]){
+                    countRow++;
+                }
+                try{
+                    if(countRow >=2 && tiles[row][column] != tiles[row][k-1]){
+                        return true;
+                    }
+                }catch (Exception e){
                     return true;
                 }
-            }catch (Exception e){
-                return true;
-            }
-
         }
         return false;
     }
@@ -65,17 +62,16 @@ public class Duplication {
     private boolean checkDupDown(int[][] tiles,int row,int column){
         setCountEmpty();
         for (int k = row+1; k <= 5; k++) {
-            if(tiles[row][column] == tiles[k][column]){
-                countColumn++;
-            }
-            try{
-                if(countColumn >=2 && tiles[row][column] != tiles[k-1][column]){
+                if(tiles[row][column] == tiles[k][column]){
+                    countColumn++;
+                }
+                try{
+                    if(countColumn >=2 && tiles[row][column] != tiles[k-1][column]){
+                        return true;
+                    }
+                }catch (Exception e){
                     return true;
                 }
-            }catch (Exception e){
-                return true;
-            }
-
         }
         return false;
     }
@@ -99,21 +95,6 @@ public class Duplication {
     public void checkSwap(int[][] tiles, int row, int column) {
         Delete delete = new Delete();
         if(canCheckDupUp(row)){
-//TODO for test
-            System.out.println();
-            System.out.println("set duplicate for test");
-            System.out.println();
-            tiles[3][0] = 1;
-            tiles[4][0] = 1;
-            tiles[5][0] = 1;
-            tiles[1][1] = 2;
-            tiles[2][1] = 2;
-            tiles[3][1] = 2;
-            tiles[4][1] = 2;
-            Game.showBoard();
-//TODO for test
-            if(checkDupUp(tiles,row,column)) delete.tile("Up,"+countColumn,row,column);
-            column--;
             if(checkDupUp(tiles,row,column)) delete.tile("Up,"+countColumn,row,column);
         }
         if(canCheckDupLeft(column)){
