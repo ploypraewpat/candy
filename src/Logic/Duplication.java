@@ -13,6 +13,9 @@ public class Duplication {
         for (int k = column-1; k >= 0; k--) {
                 if(tiles[row][column] == tiles[row][k]){
                     countRow++;
+                }if(countRow==0 && column-k == 1 || countRow==1 && column-k == 2){
+                    column--;
+                    return false;
                 }
                 try{
                     if(countRow >=2 && tiles[row][column] != tiles[row][k-1]){
@@ -30,6 +33,9 @@ public class Duplication {
         for (int k = row-1; k >= 0; k--) {
                 if(tiles[row][column] == tiles[k][column]){
                     countColumn++;
+                }if(countColumn==0 && row-k == 1 || countColumn==1 && row-k == 2){
+                    row--;
+                    return false;
                 }
                 try{
                     if(countColumn >=2 && tiles[row][column] != tiles[k-1][column]){
@@ -47,6 +53,9 @@ public class Duplication {
         for (int k = column+1; k <= 5; k++) {
                 if(tiles[row][column] == tiles[row][k]){
                     countRow++;
+                }if(countRow==0 && column-k == 1 || countRow==1 && column-k == 2){
+                    column++;
+                    return false;
                 }
                 try{
                     if(countRow >=2 && tiles[row][column] != tiles[row][k-1]){
@@ -64,6 +73,9 @@ public class Duplication {
         for (int k = row+1; k <= 5; k++) {
                 if(tiles[row][column] == tiles[k][column]){
                     countColumn++;
+                }if(countColumn==0 && row-k == 1 || countColumn==1 && row-k == 2){
+                    row++;
+                    return false;
                 }
                 try{
                     if(countColumn >=2 && tiles[row][column] != tiles[k-1][column]){

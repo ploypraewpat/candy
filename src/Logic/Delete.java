@@ -42,34 +42,6 @@ public class Delete {
             Fall fall = new Fall();
             fall.down(row,column,position,tiles, data[0]);
         }
-//        if(data[0].equals("Right")){
-//            int position = column+Integer.valueOf(data[1]);
-//            for (int i = column; i <= position; i++) {
-//                tiles[row][i]=0;
-//                int point = score.getScore()+100;
-//                score.setScore(point);
-//            }
-////          TODO for test
-//            System.out.println();
-//            Game.showBoard();
-////          TODO for test
-//            Fall fall = new Fall();
-//            fall.down(row,column,position,tiles, data[0]);
-//        }
-//        if(data[0].equals("Down")){
-//            int position = row+Integer.valueOf(data[1]);
-//            for (int i = row; i <= position; i++) {
-//                tiles[i][column]=0;
-//                int point = score.getScore()+100;
-//                score.setScore(point);
-//            }
-////          TODO for test
-//            System.out.println();
-//            Game.showBoard();
-////          TODO for test
-//            Fall fall = new Fall();
-//            fall.down(row,column,position,tiles, data[0]);
-//        }
         board.setBoard(tiles);
     }
 }
