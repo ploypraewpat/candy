@@ -17,7 +17,7 @@ public class Initial {
         {
             column=0;
             while (column<6){
-                randomNum = ThreadLocalRandom.current().nextInt(1, 4+1);
+                randomNum = 1 + (int)(Math.random() * 4);
                 tiles[row][column] = randomNum;
                 if(!duplication.initialCheckDup(tiles,row,column)){
                     column++;

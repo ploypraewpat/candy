@@ -38,7 +38,7 @@ public class Fall {
                 }
             } catch (Exception e) {}
             while (i >= 0) {
-                int randomNum = ThreadLocalRandom.current().nextInt(1, 4 + 1);
+                int randomNum =  1 + (int)(Math.random() * 4);
                 tiles[i][j] = randomNum;
                 i--;
             }
